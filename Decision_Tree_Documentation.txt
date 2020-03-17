@@ -1,0 +1,74 @@
+BAGGING(make random subsets we train trees using metrics like GINI or INFORMATION GAIN, for each one of these models, evaluate with PRECISION, RECALL, and ACCURACY)#Type of ESEMBLE LEARNING to assist in PRUNING
+
+
+
+
+## Find an Optimal Switch Point - Metrics to split data into subcatagories
+### 1. Information Gain (Entropy)
+Relative information entropy gain in positive terms
+Gain = Hnew – Hprevious = H(T) – H(T | a)
+Entropy is a way to determine how descriptive bit are
+### 2.GINI impurity
+Determines how probable an attribute is at showing up and the probability of it being mistaken.
+
+I↓G↓(f) = ∑↓i=1↓↑m↑ p(f↓1↓)(1−p(f↓i↓)) = 1 − ∑↓i=1↓↑m↑ p(f↓i↓)^2
+
+Choose factor with lowest impurity as the first split point. This will create less inpurity within tree.
+
+### 3. Variance reduction
+Used primarily for continous decision trees.
+Aims to reduce dispersion of classification
+
+ξ = E(X↓1f↓) −E(X↓2f↓) = μ1−μ2
+
+### Mean Squared Error (MSE)
+### Mean Absolute Error (MAE)
+
+## Pruning
+Decision trees are wonderful but have a major drawback: sometimes they overfit data. As we will see in many chapters in this book, overfitting is a big problem. We want to model our problem without memorizing the data. 
+
+Decision trees are generally hard to compute but easy to verify
+
+Pruning's goal is to find a subtree of the full tree  using preceding decision points that minimizes this error surface:
+
+err(prune(T,t) ,S) −err(T,S) 
+/
+|leaves(T)| − |leaves(prune(T,t))|
+
+Finding optimal pruined tree is difficult due to number of possibilities but essemble learning can help
+
+### Types of Ensemble Learning
+Meta programming for machine learning
+#### Bagging (bootstrap aggregation)
+This method was invented as a way to improve a model without changing anything except the training set. It does this by aggregating multiple random versions of the training set.
+
+BAGGING(make random subsets we train trees using metrics like GINI or INFORMATION GAIN, for each one of these models,evaluate with PRECISION, RECALL, and ACCURACY)#Type of ESEMBLE LEARNING to assist in PRUNING
+
+Precision = True Positives / (True Positives + False Positives) 
+
+Recall = True Positives / (True Positives + False Negatives) 
+
+Accuracy = (True Positives + True Negatives) / (Number of all responses)
+
+Precision is a measure of how on point the classification is. For instance, out of all the positive matches the model finds, how many of them were correct? 
+
+Recall can be thought of as the sensitivity of the model. It is a measure of whether all the relevant instances were actually looked at. 
+
+Accuracy as we know it is simply an error rate of the model.
+
+#### Random Forests
+Randomly select feature spaces
+
+
+## Additional
+### Gini Importance (Node's importance)
+ni↓j↓ = w↓j↓*C↓j↓ - w↓left(j)↓*C↓left(j)↓ - w↓right(j)↓*C↓right(j)↓
+
+ni↓j↓ = importance of node j
+w↓j↓ = weighted number of samples reaching node j
+C↓j↓= the impurity value of node j
+left↓j↓ = child node from left split on node j
+right↓j↓ = child node from right split on node j
+
+### Importance of each feature on a decision treee
+fi↓i↓ = 
