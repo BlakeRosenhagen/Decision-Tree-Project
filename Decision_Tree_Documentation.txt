@@ -72,3 +72,6 @@ right↓j↓ = child node from right split on node j
 
 ### Importance of each feature on a decision treee
 fi↓i↓ = 
+
+
+
