@@ -1,8 +1,3 @@
-# Important notes from https://christophm.github.io/interpretable-ml-book/feature-importance.html
-final tree generation is contained within a function that takes bool args or parameters from decision tree parameter optimization note books
-
-
-
 # Decision Tree Classifier Parameters
 
 The minimum weighted fraction of the sum total of weights (of all the input samples) required to be at a leaf node. Samples have equal weight when sample_weight is not provided. weights can be provided by permutation importance
